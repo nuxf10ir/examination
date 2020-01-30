@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'Berlingske Sans';
+    src:	url('./fonts/BerlingskeSans-Rg.eot');
+    src:	url('./fonts/BerlingskeSans-Rg.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/BerlingskeSans-Rg.woff2') format('woff2'),
+    url('./fonts/BerlingskeSans-Rg.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Berlingske Sans';
+    src:	url('./fonts/BerlingskeSans-Blk.eot');
+    src:	url('./fonts/BerlingskeSans-Blk.eot?#iefix') format('embedded-opentype');
+    src:	url('./fonts/BerlingskeSans-Blk.woff2')format('woff2'),
+    url('./fonts/BerlingskeSans-Blk.woff')format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+.cardgame {
+    width: 745px;
+    height: 580px;
+    margin: 100px auto;
+    font-family: 'Berlingske Sans', Arial, Helvetica, sans-serif;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.card.card-content__type-loader .lds-css {
+    padding-top: 100px;
+}
+
+.card.card-content__type-start {
+    background: url("./../i/start.png") no-repeat 0 0;
+}
+
+.start-description {
+    display: block;
+    position: absolute;
+    top: 261px;
+    width: 670px;
+    left: 35px;
+    height: 165px;
+    box-shadow: 0 0 5px 1px #0000004d;
+    background: #ffffff80;
+}
+
+.start-description .description-title {
+    margin: 15px;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 30px;
+}
+
+.start-description .description-content {
+    margin: 0 30px;
+    text-align: center;
+    line-height: 18px;
+}
+
+.start-button {
+    position: absolute;
+    bottom: 61px;
+    left: 222px;
+    display: block;
+    background: #e4da7b;
+    width: 318px;
+    padding: 25px 0;
+    box-shadow: 0 0 5px 1px #0000004d;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.start-button:hover {
+    background: #d8cd63;
+}
+
+.card.card-content__type-quiz {
+    background: url("./../i/back.png") no-repeat 0 0;
+}
+
+.quiz-question {
+    position: absolute;
+    width: 243px;
+    height: 110px;
+    top: 50px;
+    left: 30px;
+    background: url(./../i/baloon.png) no-repeat 0 0;
+    padding: 55px 50px;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    display: table;
+}
+
+.quiz-question .quiz-question__in {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.quiz-variants {
+    position: absolute;
+    top: 390px;
+    margin: 1em auto;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+}
+
+.quiz-variant {
+    width: 75%;
+    margin: 0 auto 12px;
+    padding: 0;
+    background: #eceae0;
+    box-shadow: 1px 2px 5px 2px #0000004d;
+    position: relative;
+    height: 40px;
+    border-color: #eceae0;
+    display: table;
+}
+.quiz-variant a {
+    padding: 0 20px;
+    cursor: pointer;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 72px;
+}
+
+.quiz-variant:after,
+.quiz-variant:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 36px solid;
+    top: 50%;
+    margin-top: -36px;
+    color: #eceae0;
+}
+
+.quiz-variant:after {
+    border-color: transparent transparent transparent currentColor;
+    left: 100%;
+}
+
+
+.quiz-variant:before {
+    border-color: transparent currentColor transparent transparent ;
+    right: 100%;
+}
+
+#quiz-reaction {
+    position: absolute;
+    top: 0;
+    left: 320px;
+    width: 360px;
+    height: 350px;
+}
+#quiz-reaction.normal {
+    background: url(./../i/normal.png) no-repeat 0 0;
+}
+#quiz-reaction.good {
+    background: url(./../i/good.png) no-repeat 0 0;
+}
+#quiz-reaction.bad {
+    background: url(./../i/bad.png) no-repeat 0 0;
+}

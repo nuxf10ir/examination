@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>В гостях у налоговой</title>
+    <link rel="stylesheet" type="text/css" href="css/loader.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__in">
+            <div id="cardgame" class="cardgame">
+                <div id="card" class="card card-content__type-loader">
+                    <div class="lds-css ng-scope">
+                        <div class="lds-ripple">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script id="start__tmpl" type="text/x-javascript-tmpl">
+        <div class="start-description">
+            <div class="description-title">
+                Деловая игра &laquo;В&nbsp;гостях у&nbsp;налоговой&raquo;
+            </div>
+            <div class="description-content">
+                Предлагаем Вам принять участие в&nbsp;деловой игре.
+                Итак, Вы&nbsp;финансовый директор компании ООО &laquo;Альфа&raquo; и&nbsp;вчера получили повестку
+                на&nbsp;допрос в&nbsp;налоговую. Вам предстоит зайти в&nbsp;кабинет и&nbsp;ответить
+                на&nbsp;7&nbsp;вопросов инспектора. Какие из&nbsp;ответов вам особенно удались, а&nbsp;над
+                какими формулировками еще надо поработать узнаете в&nbsp;конце игры.
+            </div>
+        </div>
+        <button id="start-button" class="start-button">
+            Начать допрос
+        </button>
+    </script>
+
+    <script id="quiz__tmpl" type="text/x-javascript-tmpl">
+        <div id="quiz-reaction" class="normal"></div>
+        <div class="quiz-question">
+            <div class="quiz-question__in">
+                {{text}}
+            </div>
+        </div>
+
+        <ul class="quiz-variants">
+            {[ _.each(variants, function(variant) { ]}
+                <li class="quiz-variant">
+                    <a class="js-to-answer" data-answer="{{variant.answerId}}" data-question="{{id}}">
+                        {{variant.text}}
+                    </a>
+                </li>
+            {[ }); ]}
+        </ul>
+    </script>
+
+    <script id="answer__tmpl" type="text/x-javascript-tmpl">
+        <div id="quiz-reaction" class="{{type}}"></div>
+        <div class="quiz-question">
+            <div class="quiz-question__in">
+                {{title}}
+            </div>
+        </div>
+
+        <ul class="quiz-variants">
+            <li class="quiz-variant">
+                <a class="js-to-question" data-question="{{nextQuestion}}">
+                    {{text}}
+                </a>
+            </li>
+        </ul>
+    </script>
+
+
+    <script id="finish__tmpl" type="text/x-javascript-tmpl">
+    </script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/underscore.min.js"></script>
+    <script src="js/gamedata.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
