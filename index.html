@@ -51,7 +51,7 @@
         <ul class="quiz-variants">
             {[ _.each(variants, function(variant) { ]}
                 <li class="quiz-variant">
-                    <a class="js-to-answer" data-answer="{{variant.answerId}}" data-question="{{id}}">
+                    <a class="js-to-answer" data-answer="{{variant.answerId}}" data-score="{{variant.score}}" data-question="{{id}}">
                         {{variant.text}}
                     </a>
                 </li>
@@ -69,20 +69,37 @@
 
         <ul class="quiz-variants">
             <li class="quiz-variant">
-                <a class="js-to-question" data-question="{{nextQuestion}}">
+                <span>
                     {{text}}
-                </a>
+                </span>
             </li>
         </ul>
+
+        <button class="next-button js-to-question" data-question="{{nextQuestion}}">
+            {{ nextQuestion === -1 ? 'Узнать результат' : 'Следующий вопрос'}}
+        </button>
+
     </script>
 
 
     <script id="finish__tmpl" type="text/x-javascript-tmpl">
+        <div class="start-description">
+            <div class="description-title">
+                Ну вот и все!
+            </div>
+            <div class="description-content">
+                Ваш результат&nbsp;&mdash; {{pluralize(result, ['балл', 'балла', 'баллов'])}}
+            </div>
+        </div>
+        <button class="start-button js-to-restart">
+            Попробовать еще раз
+        </button>
     </script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/underscore.min.js"></script>
     <script src="js/gamedata.js"></script>
+    <script src="js/lib.js"></script>
     <script src="js/script.js"></script>
 
 </body>
